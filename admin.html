@@ -4,90 +4,124 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Admin Dashboard | Rasl Studio</title>
+<title>RASL Studio Admin Dashboard</title>
 
 <style>
 
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
 body{
 font-family:Arial,sans-serif;
-background:#f6f4f1;
-padding:40px;
-margin:0;
+background:#f4f6f9;
+padding:20px;
+color:#333;
 }
 
-h1{
-margin-bottom:30px;
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:25px;
 }
 
-.card{
+.header h1{
+font-size:28px;
+}
+
+.logout-btn{
+background:#111;
+color:white;
+border:none;
+padding:12px 18px;
+border-radius:10px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.logout-btn:hover{
+opacity:.9;
+}
+
+.dashboard-grid{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(180px,1fr));
+gap:15px;
+margin-bottom:25px;
+}
+
+.stat-card{
 background:white;
 padding:20px;
-margin-bottom:20px;
-border-radius:12px;
+border-radius:16px;
 box-shadow:0 4px 12px rgba(0,0,0,.08);
 }
 
-.card h3{
+.stat-card h3{
+font-size:14px;
 margin-bottom:10px;
+color:#666;
+}
+
+.stat-card p{
+font-size:28px;
+font-weight:bold;
+}
+
+.search-box{
+margin-bottom:25px;
+}
+
+.search-box input{
+width:100%;
+padding:14px;
+border-radius:12px;
+border:1px solid #ddd;
+font-size:16px;
+}
+
+.section-card{
+background:white;
+padding:20px;
+border-radius:16px;
+box-shadow:0 4px 12px rgba(0,0,0,.08);
+margin-bottom:20px;
+}
+
+.section-card h2{
+margin-bottom:15px;
+}
+
+.request-card{
+background:white;
+padding:20px;
+border-radius:16px;
+box-shadow:0 4px 12px rgba(0,0,0,.08);
+margin-bottom:20px;
+}
+
+.request-card h3{
+margin-bottom:10px;
+}
+
+.request-card p{
+margin-bottom:8px;
 }
 
 .label{
 font-weight:bold;
 }
 
-#statsCard{
-background:white;
-padding:24px;
-border-radius:20px;
-margin-bottom:30px;
-border:1px solid rgba(0,0,0,.08);
-box-shadow:0 10px 30px rgba(0,0,0,.04);
-}
-
-#statsCard h2{
-margin-bottom:12px;
-}
-
-#statsCard p{
-margin:8px 0;
-font-weight:600;
-}
-
-#serviceStats{
-margin-top:15px;
-padding-top:15px;
-border-top:1px solid rgba(0,0,0,.08);
-}
-
-#serviceStats p{
-margin:6px 0;
-font-weight:500;
-} 
-
-.status-buttons{
-margin-top:15px;
-display:flex;
-gap:8px;
-flex-wrap:wrap;
-}
-
-.status-buttons button{
-padding:8px 12px;
-border:none;
-border-radius:10px;
-cursor:pointer;
-font-size:14px;
-font-weight:600;
-}
-
-.status-badge{
-display:inline-block;
+.status{
 padding:6px 12px;
-border-radius:999px;
+border-radius:20px;
 font-size:13px;
-font-weight:600;
-margin-top:5px;
+font-weight:bold;
+display:inline-block;
 }
 
 .status-new{
@@ -106,150 +140,139 @@ background:#d4edda;
 background:#c3e6cb;
 }
 
-.delete-section{
+.action-buttons{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
 margin-top:15px;
+}
+
+.action-buttons button{
+border:none;
+padding:10px 14px;
+border-radius:10px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.contact-btn{
+background:#17a2b8;
+color:white;
+}
+
+.progress-btn{
+background:#28a745;
+color:white;
+}
+
+.complete-btn{
+background:#6f42c1;
+color:white;
 }
 
 .delete-btn{
-padding:10px 16px;
-border:none;
-border-radius:10px;
-cursor:pointer;
-font-weight:600;
-width:100%;
+background:#dc3545;
+color:white;
 }
 
-.dashboard-cards{
-display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(150px,1fr));
-gap:15px;
-margin-bottom:25px;
-}
-
-.summary-card{
-background:#fff;
-padding:20px;
-border-radius:16px;
-border:1px solid rgba(0,0,0,.08);
+.loading{
 text-align:center;
-}
-
-.summary-card h3{
-font-size:14px;
-margin-bottom:10px;
-}
-
-.summary-card p{
-font-size:28px;
-font-weight:700;
-}
-
-.search-section{
-margin-bottom:25px;
-}
-
-#searchInput{
-width:100%;
-padding:14px;
-border-radius:12px;
-border:1px solid rgba(0,0,0,.1);
-font-size:16px;
-}
-
-#recentActivity{
-margin-top:15px;
-padding:15px;
-border-radius:12px;
-background:rgba(0,0,0,.04);
-font-size:14px;
+padding:30px;
+font-weight:bold;
 }
 
 </style>
+
 </head>
 
 <body>
 
-<h1>Project Requests</h1>
+<div class="header">
 
-<button id="logoutBtn">
+<h1>RASL Studio Dashboard</h1>
+
+<button
+id="logoutBtn"
+class="logout-btn">
+
 Logout
+
 </button>
 
-<div id="statsCard">
-
-<h2>Dashboard Statistics</h2>
-
-<div class="dashboard-cards">
-
-<div class="summary-card">
-<h3>Total</h3>
-<p id="totalCard">0</p>
 </div>
 
-<div class="summary-card">
+
+<div class="dashboard-grid">
+
+<div class="stat-card">
+<h3>Total Requests</h3>
+<p id="totalCount">0</p>
+</div>
+
+<div class="stat-card">
 <h3>New</h3>
-<p id="newCard">0</p>
+<p id="newCount">0</p>
 </div>
 
-<div class="summary-card">
+<div class="stat-card">
+<h3>Contacted</h3>
+<p id="contactedCount">0</p>
+</div>
+
+<div class="stat-card">
 <h3>In Progress</h3>
-<p id="progressCard">0</p>
+<p id="progressCount">0</p>
 </div>
 
-<div class="summary-card">
+<div class="stat-card">
 <h3>Completed</h3>
-<p id="completedCard">0</p>
-</div>
-
-<div class="summary-card">
-<h3>Pending Contact</h3>
-<p id="pendingCard">0</p>
+<p id="completedCount">0</p>
 </div>
 
 </div>
 
-<p id="totalRequests">
-Total Requests: 0
-</p>
 
-<p id="latestRequest">
-Latest Request: -
-</p>
 
-<div id="recentActivity">
-No recent activity
-</div>
-
-<h3>Services Breakdown</h3>
-
-<div id="serviceStats">
-Loading...
-</div>
-
-</div>
-
-<div class="search-section">
+<div class="search-box">
 
 <input
 type="text"
 id="searchInput"
-placeholder="Search by name, email, service...">
+placeholder="Search by name, email, business or service...">
 
 </div>
 
-<div id="requestsContainer">
 
-Loading requests...
+
+<div class="section-card">
+
+<h2>Service Breakdown</h2>
+
+<div id="serviceStats">
+
+<div class="loading">
+
+Loading...
+
+</div>
 
 </div>
 
 <script type="module">
 
-import { initializeApp }
-from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+import {
+initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
 
-alert("Script loaded");
+import {
+getAuth,
+onAuthStateChanged,
+signOut
+}
+from
+"https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
 
 import {
 getFirestore,
@@ -259,80 +282,99 @@ doc,
 updateDoc,
 deleteDoc
 }
-from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
+from
+"https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
 
-import {
-getAuth,
-onAuthStateChanged,
-signOut
-}
-from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
+
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAgqYvZpddb_B38Rvx0-C3rMBHVq1E1lAo",
-  authDomain: "rasl-studio-d39c1.firebaseapp.com",
-  projectId: "rasl-studio-d39c1",
-  storageBucket: "rasl-studio-d39c1.firebasestorage.app",
-  messagingSenderId: "807786864382",
-  appId: "1:807786864382:web:6bcdfe6617f7af61500faf"
+
+apiKey:
+"AIzaSyAgqYvZpddb_B38Rvx0-C3rMBHVq1E1lAo",
+
+authDomain:
+"rasl-studio-d39c1.firebaseapp.com",
+
+projectId:
+"rasl-studio-d39c1",
+
+storageBucket:
+"rasl-studio-d39c1.firebasestorage.app",
+
+messagingSenderId:
+"807786864382",
+
+appId:
+"1:807786864382:web:6bcdfe6617f7af61500faf"
+
 };
 
-const app = initializeApp(firebaseConfig);
 
-const db = getFirestore(app);
 
-const auth = getAuth(app);
+const app =
+initializeApp(firebaseConfig);
+
+const auth =
+getAuth(app);
+
+const db =
+getFirestore(app);
+
+
+
 let allRequests = [];
-const logoutBtn =
-document.getElementById("logoutBtn");
-logoutBtn.addEventListener("click", async () => {
 
-await signOut(auth);
 
-window.location.href = "login.html";
+
+onAuthStateChanged(auth,(user)=>{
+
+if(!user){
+
+window.location.href =
+"login.html";
+
+return;
+
+}
+
+loadRequests();
 
 });
 
-const container =
-document.getElementById("requestsContainer");
 
-const totalRequests =
-document.getElementById("totalRequests");
 
-const totalCard =
-document.getElementById("totalCard");
+document
+.getElementById("logoutBtn")
+.addEventListener("click",async()=>{
 
-const newCard =
-document.getElementById("newCard");
+await signOut(auth);
 
-const progressCard =
-document.getElementById("progressCard");
+window.location.href =
+"login.html";
 
-const pendingCard =
-document.getElementById("pendingCard");
-
-const completedCard =
-document.getElementById("completedCard");
-
-const latestRequest =
-document.getElementById("latestRequest");
-
-const searchInput =
-document.getElementById("searchInput");
-
-const serviceStats =
-document.getElementById("serviceStats");
+});
 
 async function loadRequests(){
 
-alert("loadRequests started");
+const requestsContainer =
+document.getElementById(
+"requestsContainer"
+);
 
-container.innerHTML = "";
+const serviceStats =
+document.getElementById(
+"serviceStats"
+);
+
+try{
+
+requestsContainer.innerHTML =
+'<div class="loading">Loading requests...</div>';
 
 const querySnapshot =
-await getDocs(collection(db,"projectRequests"));
-
-console.log("Documents:", querySnapshot.size);
+await getDocs(
+collection(db,"projectRequests")
+);
 
 allRequests = [];
 
@@ -345,219 +387,479 @@ id: docItem.id,
 
 });
 
-alert("Requests loaded: " + allRequests.length);
-
-console.log("Loaded Requests:", allRequests);
 
 allRequests.sort((a,b)=>{
 
-return new Date(b.submittedAt || 0)
-
-new Date(a.submittedAt || 0);
-
-});
-
-totalRequests.textContent =
-"Total Requests: ${allRequests.length}";
-
-let newCount = 0;
-let progressCount = 0;
-let completedCount = 0;
-let pendingCount = 0;
-
-allRequests.forEach((request)=>{
-
-const status =
-request.status || "New";
-
-if(status === "New"){
-
-newCount++;
-pendingCount++;
-
-}
-
-if(status === "In Progress"){
-
-progressCount++;
-
-}
-
-if(status === "Completed"){
-
-completedCount++;
-
-}
+return (
+new Date(b.submittedAt || 0) -
+new Date(a.submittedAt || 0)
+);
 
 });
 
-totalCard.textContent =
+
+updateStatistics();
+
+renderServiceBreakdown();
+
+renderRequests(allRequests);
+
+}
+catch(error){
+
+console.error(error);
+
+requestsContainer.innerHTML =
+
+`<div class="loading">
+
+Failed to load requests.
+
+</div>`;
+
+}
+
+}
+
+
+
+function updateStatistics(){
+
+const total =
 allRequests.length;
 
-newCard.textContent =
-newCount;
+const newCount =
+allRequests.filter(item=>
 
-progressCard.textContent =
+(item.status || "New")
+=== "New"
+
+).length;
+
+const contactedCount =
+allRequests.filter(item=>
+
+item.status ===
+"Contacted"
+
+).length;
+
+const progressCount =
+allRequests.filter(item=>
+
+item.status ===
+"In Progress"
+
+).length;
+
+const completedCount =
+allRequests.filter(item=>
+
+item.status ===
+"Completed"
+
+).length;
+
+
+
+document.getElementById(
+"totalCount"
+).textContent = total;
+
+document.getElementById(
+"newCount"
+).textContent = newCount;
+
+document.getElementById(
+"contactedCount"
+).textContent =
+contactedCount;
+
+document.getElementById(
+"progressCount"
+).textContent =
 progressCount;
 
-completedCard.textContent =
+document.getElementById(
+"completedCount"
+).textContent =
 completedCount;
 
-pendingCard.textContent =
-pendingCount;
 
-const services = {};
-
-allRequests.forEach((request)=>{
-
-const service =
-request.service || "Unknown";
-
-services[service] =
-(services[service] || 0) + 1;
-
-});
-
-serviceStats.innerHTML = "";
-
-for(const service in services){
-
-serviceStats.innerHTML += `
-
-<p>${service}: ${services[service]}</p>
-`;}
-
-if(allRequests.length > 0){
-
-latestRequest.textContent =
-"Latest Request: ${ new Date( allRequests[0].submittedAt ).toLocaleString() }";
 
 const recentActivity =
-document.getElementById("recentActivity");
+document.getElementById(
+"recentActivity"
+);
+
+if(allRequests.length){
 
 recentActivity.textContent =
-"${allRequests[0].fullName || "Client"} submitted a ${allRequests[0].service || "project"} request.";
+
+`${allRequests[0].fullName || "Client"}
+submitted a
+${allRequests[0].service || "project"}
+request.`;
+
+}else{
+
+recentActivity.textContent =
+"No recent activity.";
 
 }
 
-allRequests.forEach((data)=>{
+}
+
+
+
+function renderServiceBreakdown(){
+
+const serviceStats =
+document.getElementById(
+"serviceStats"
+);
+
+if(!allRequests.length){
+
+serviceStats.innerHTML =
+"No requests available.";
+
+return;
+
+}
+
+const counts = {};
+
+allRequests.forEach(item=>{
+
+const service =
+item.service ||
+"Unknown";
+
+counts[service] =
+(counts[service] || 0)
++ 1;
+
+});
+
+let html = "";
+
+Object.entries(counts)
+.forEach(([service,count])=>{
+
+html += `
+
+<p>
+
+<strong>${service}</strong>
+
+(${count})
+
+</p>
+
+`;
+
+});
+
+serviceStats.innerHTML =
+html;
+
+}
+
+
+
+function renderRequests(data){
+
+const container =
+document.getElementById(
+"requestsContainer"
+);
+
+if(!data.length){
+
+container.innerHTML =
+
+`<div class="loading">
+
+No requests found.
+
+</div>`;
+
+return;
+
+}
+
+container.innerHTML = "";
+
+data.forEach((item)=>{
 
 container.innerHTML += `
 
-<div class="card"><h3>${data.fullName || "No Name"}</h3><p>
-<span class="label">Business:</span>
-${data.businessName || "-"}
-</p><p>
-<span class="label">Email:</span>
-${data.email || "-"}
-</p><p>
-<span class="label">WhatsApp:</span>
-${data.whatsapp || "-"}
-</p><p>
-<span class="label">Service:</span>
-${data.service || "-"}
-</p><p>
-<span class="label">Budget:</span>
-${data.budget || "-"}
-</p><p>
-<span class="label">Description:</span>
-${data.description || "-"}
-</p><p>
-<span class="label">Status:</span><span class="status-badge
-${
-(data.status || "New") === "New"
-? "status-new"
-: (data.status === "Contacted")
-? "status-contacted"
-: (data.status === "In Progress")
-? "status-progress"
-: "status-completed"
-}">
-${data.status || "New"}
+<div class="request-card">
+
+<h3>
+${item.fullName || "No Name"}
+</h3>
+
+<p>
+
+<span class="label">
+Business:
 </span>
 
-</p><div class="status-buttons"><button onclick="updateStatus('${data.id}','Contacted')">
+${item.businessName || "-"}
+
+</p>
+
+<p>
+
+<span class="label">
+Email:
+</span>
+
+${item.email || "-"}
+
+</p>
+
+<p>
+
+<span class="label">
+WhatsApp:
+</span>
+
+${item.whatsapp || "-"}
+
+</p>
+
+<p>
+
+<span class="label">
+Service:
+</span>
+
+${item.service || "-"}
+
+</p>
+
+<p>
+
+<span class="label">
+Budget:
+</span>
+
+${item.budget || "-"}
+
+</p>
+
+<p>
+
+<span class="label">
+Description:
+</span>
+
+${item.description || "-"}
+
+</p>
+
+<p>
+
+<span class="label">
+Status:
+</span>
+
+<span class="status
+${getStatusClass(item.status)}">
+
+${item.status || "New"}
+
+</span>
+
+</p>
+
+<div class="action-buttons">
+
+<button
+class="contact-btn"
+onclick="updateStatus('${item.id}','Contacted')">
+
 Contacted
-</button><button onclick="updateStatus('${data.id}','In Progress')">
+
+</button>
+
+<button
+class="progress-btn"
+onclick="updateStatus('${item.id}','In Progress')">
+
 In Progress
-</button><button onclick="updateStatus('${data.id}','Completed')">
+
+</button>
+
+<button
+class="complete-btn"
+onclick="updateStatus('${item.id}','Completed')">
+
 Completed
-</button></div><div class="delete-section"><button
+
+</button>
+
+<button
 class="delete-btn"
-onclick="deleteRequest('${data.id}')">
+onclick="deleteRequest('${item.id}')">
 
-Delete Request
+Delete
 
-</button></div><p>
-<span class="label">Submitted:</span>
-${data.submittedAt
-? new Date(data.submittedAt).toLocaleString()
-: "-"}
-</p></div>`;
+</button>
+
+</div>
+
+</div>
+
+`;
 
 });
 
 }
 
-window.updateStatus = async function(id,status){
+function getStatusClass(status){
+
+switch(status){
+
+case "Contacted":
+return "status-contacted";
+
+case "In Progress":
+return "status-progress";
+
+case "Completed":
+return "status-completed";
+
+default:
+return "status-new";
+
+}
+
+}
+
+
+
+document
+.getElementById("searchInput")
+.addEventListener("input",(e)=>{
+
+const search =
+e.target.value.toLowerCase();
+
+const filtered =
+allRequests.filter(item=>{
+
+return (
+
+(item.fullName || "")
+.toLowerCase()
+.includes(search)
+
+||
+
+(item.businessName || "")
+.toLowerCase()
+.includes(search)
+
+||
+
+(item.email || "")
+.toLowerCase()
+.includes(search)
+
+||
+
+(item.service || "")
+.toLowerCase()
+.includes(search)
+
+);
+
+});
+
+renderRequests(filtered);
+
+});
+
+
+
+window.updateStatus =
+async function(id,status){
 
 try{
 
 await updateDoc(
-doc(db,"projectRequests",id),
+
+doc(
+db,
+"projectRequests",
+id
+),
+
 {
-status:status
+status: status
 }
+
 );
 
 loadRequests();
 
-}catch(error){
+}
+catch(error){
 
 console.error(error);
 
-}
+alert(
+"Failed to update status."
+);
 
 }
 
-window.deleteRequest = async function(id){
+};
+
+
+
+window.deleteRequest =
+async function(id){
 
 const confirmed =
 confirm(
-"Are you sure you want to delete this request?"
+"Delete this request?"
 );
 
-if(!confirmed) return;
+if(!confirmed){
+return;
+}
 
 try{
 
 await deleteDoc(
-doc(db,"projectRequests",id)
+
+doc(
+db,
+"projectRequests",
+id
+)
+
 );
 
 loadRequests();
 
-}catch(error){
+}
+catch(error){
 
 console.error(error);
 
-}
+alert(
+"Failed to delete request."
+);
 
 }
 
-onAuthStateChanged(auth, (user) => {
-
-if(user){
-
-loadRequests();
-
-}else{
-
-window.location.href = "login.html";
-
-}
-
-});
+};
 
 </script>
 
