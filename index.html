@@ -1,0 +1,647 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Graphic Designer in Maseru, Lesotho | Rasl Studio Branding & Logo Design</title>  <meta name="description" content="Rasl Studio is a professional graphic designer in Maseru, Lesotho specializing in branding, logo design, visual identity, and complete business branding systems.">
+  <meta name="keywords" content="graphic designer Lesotho, Maseru logo design, branding studio Lesotho, visual identity design, freelance designer Africa">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Rasl Studio">
+  <meta name="theme-color" content="#111111">  <link rel="canonical" href="https://raslstudio.netlify.app/">  <meta property="og:title" content="Graphic Designer in Maseru, Lesotho | Rasl Studio">
+  <meta property="og:description" content="Branding, logo design, and visual identity studio based in Lesotho.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://raslstudio.netlify.app/">  <meta name="twitter:card" content="summary_large_image">  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">  <style>
+    :root {
+      --bg: #f6f4f1;
+      --surface: rgba(255, 255, 255, 0.62);
+      --surface-strong: rgba(255, 255, 255, 0.86);
+      --text: #111;
+      --muted: #6b6b6b;
+      --line: rgba(17, 17, 17, 0.08);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.10);
+      --radius: 24px;
+      --nav-h: 82px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.5;
+    }
+
+    img, video {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    section {
+      padding: 96px 8%;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      min-height: var(--nav-h);
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(246, 244, 241, 0.75);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+      z-index: 1000;
+    }
+
+    .logo {
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 26px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #111;
+      font-size: 14px;
+      opacity: 0.72;
+      transition: opacity 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    .hero {
+      min-height: 100vh;
+      padding-top: calc(var(--nav-h) + 28px);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(246, 244, 241, 0.70), rgba(246, 244, 241, 0.88)),
+        url("images/hero-bg.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.28), transparent 40%),
+        radial-gradient(circle at bottom right, rgba(17, 17, 17, 0.08), transparent 38%);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -10% -20% -10%;
+      height: 320px;
+      background: linear-gradient(to top, rgba(246, 244, 241, 1), rgba(246, 244, 241, 0));
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      position: relative;
+      z-index: 1;
+      padding: 34px;
+      border: 1px solid rgba(255, 255, 255, 0.42);
+      background: rgba(255, 255, 255, 0.22);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .small {
+      font-size: 12px;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    h1 {
+      font-size: clamp(3rem, 7vw, 6.6rem);
+      line-height: 0.96;
+      margin-top: 16px;
+      letter-spacing: -0.04em;
+      max-width: 10ch;
+    }
+
+    .hero p {
+      margin-top: 20px;
+      font-size: 18px;
+      color: rgba(17, 17, 17, 0.74);
+      max-width: 660px;
+      line-height: 1.8;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 26px;
+      background: #111;
+      color: #fff;
+      border-radius: 999px;
+      text-decoration: none;
+      border: 1px solid #111;
+      transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+      will-change: transform;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.96;
+    }
+
+    .btn.secondary {
+      background: rgba(255, 255, 255, 0.55);
+      color: #111;
+      border-color: rgba(17, 17, 17, 0.12);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .section-title {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 35px;
+    }
+
+    .intro-copy {
+      color: var(--muted);
+      max-width: 700px;
+      line-height: 1.8;
+      font-size: 18px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+
+    .portfolio-item {
+      grid-column: span 4;
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(17, 17, 17, 0.08);
+      background: #fff;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+      cursor: zoom-in;
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 4 / 5;
+      transform: scale(1.001);
+      transition: transform 0.28s ease;
+    }
+
+    .portfolio-item:hover img {
+      transform: scale(1.04);
+    }
+
+    .portfolio-item::after {
+      content: "Tap to view";
+      position: absolute;
+      left: 14px;
+      bottom: 14px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: #111;
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      opacity: 0;
+      transform: translateY(6px);
+      transition: 0.2s ease;
+    }
+
+    .portfolio-item:hover::after,
+    .portfolio-item:focus-visible::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .about p {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .service {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .service h3 {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .reviews {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+
+    .review-card {
+      grid-column: span 4;
+      background: var(--surface-strong);
+      padding: 28px;
+      border-radius: 22px;
+      border: 1px solid rgba(17, 17, 17, 0.08);
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.05);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .stars {
+      letter-spacing: 2px;
+      font-size: 16px;
+      margin-bottom: 14px;
+    }
+
+    .review-card p {
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    .review-card h4 {
+      margin-top: 18px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: clamp(2.4rem, 6vw, 4.5rem);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+    }
+
+    .contact p {
+      color: var(--muted);
+      max-width: 600px;
+      margin: 20px auto 0;
+      line-height: 1.8;
+      font-size: 18px;
+    }
+
+    .footer {
+      padding: 36px 8%;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(12, 12, 12, 0.82);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 22px;
+      z-index: 2000;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-inner {
+      width: min(1100px, 100%);
+      max-height: 88vh;
+      position: relative;
+    }
+
+    .lightbox img {
+      width: 100%;
+      max-height: 88vh;
+      object-fit: contain;
+      border-radius: 20px;
+      background: #111;
+      box-shadow: 0 20px 70px rgba(0, 0, 0, 0.35);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -14px;
+      right: -14px;
+      width: 44px;
+      height: 44px;
+      border: none;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.92);
+      color: #111;
+      font-size: 22px;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 960px) {
+      .portfolio-item,
+      .review-card {
+        grid-column: span 6;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 80px 6%;
+      }
+
+      nav {
+        padding: 16px 6%;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 92svh;
+        padding-top: calc(var(--nav-h) + 18px);
+        background:
+          linear-gradient(180deg, rgba(246, 244, 241, 0.70), rgba(246, 244, 241, 0.90)),
+          url("images/hero-bg-mobile.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .hero-content {
+        padding: 24px;
+        border-radius: 26px;
+      }
+
+      h1 {
+        max-width: 11ch;
+        font-size: clamp(2.6rem, 14vw, 4.4rem);
+      }
+
+      .hero p,
+      .intro-copy,
+      .about p,
+      .contact p {
+        font-size: 16px;
+      }
+
+      .grid,
+      .reviews {
+        gap: 14px;
+      }
+
+      .portfolio-item,
+      .review-card {
+        grid-column: span 12;
+      }
+
+      .service {
+        flex-direction: column;
+      }
+
+      .footer {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style></head>
+<body>
+  <nav>
+    <div class="logo">Rasl Studio | Graphic Designer Portfolio</div>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>  <section class="hero">
+    <div class="hero-content">
+      <div class="small">Graphic Designer in Maseru, Lesotho • Branding • Logo Design</div>
+      <h1>We build brands that grow businesses.</h1>
+      <p>
+        Rasl Studio is a professional graphic designer in Maseru, Lesotho helping businesses build strong branding, logos, and visual identities that attract real customers.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn">Hire Me</a>
+        <a href="https://instagram.com/rasebokeng.t" class="btn secondary" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </section>  <section>
+    <div class="section-title">Why Clients Choose Rasl Studio</div>
+    <p class="intro-copy">
+      We create strategic design that helps businesses look professional, build trust, and stand out in competitive markets in Lesotho and beyond.
+    </p>
+  </section>  <section id="work">
+    <div class="section-title">Portfolio</div><div class="grid">
+  <button class="portfolio-item" type="button" data-full="portfolio/project1.png" aria-label="Open logo design preview">
+    <img src="portfolio/project1.png" alt="Logo design Lesotho" loading="lazy" decoding="async">
+  </button>
+
+  <button class="portfolio-item" type="button" data-full="portfolio/project2.jpg" aria-label="Open brand identity preview">
+    <img src="portfolio/project2.jpg" alt="Brand identity Maseru" loading="lazy" decoding="async">
+  </button>
+
+  <button class="portfolio-item" type="button" data-full="portfolio/project3.jpg" aria-label="Open social media design preview">
+    <img src="portfolio/project3.jpg" alt="Social media design Lesotho" loading="lazy" decoding="async">
+  </button>
+
+  <button class="portfolio-item" type="button" data-full="portfolio/project4.png" aria-label="Open poster design preview">
+    <img src="portfolio/project4.png" alt="Poster design Maseru" loading="lazy" decoding="async">
+  </button>
+
+  <button class="portfolio-item" type="button" data-full="portfolio/project5.png" aria-label="Open CV design preview">
+    <img src="portfolio/project5.png" alt="CV design" loading="lazy" decoding="async">
+  </button>
+
+  <button class="portfolio-item" type="button" data-full="portfolio/project6.jpg" aria-label="Open catalogue design preview">
+    <img src="portfolio/project6.jpg" alt="Catalogue 2026" loading="lazy" decoding="async">
+  </button>
+</div>
+
+  </section>  <section>
+    <div class="section-title">Behind the Work</div>
+    <p class="intro-copy" style="margin-bottom: 25px;">
+      A short look into the creative process behind Rasl Studio — how ideas become real brand identities.
+    </p><video controls preload="metadata" style="width:100%;max-width:900px;border-radius:18px;box-shadow:var(--shadow);border:1px solid rgba(17,17,17,.08);">
+  <source src="portfolio/behind-the-work.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+  </section>  <section id="about">
+    <div class="section-title">About Graphic Designer in Lesotho</div>
+    <div class="about">
+      <div></div>
+      <div>
+        <p>
+          Rasl Studio is a freelance graphic designer based in Maseru, Lesotho specializing in branding, logo design, and visual identity systems for businesses and individuals.
+          <br><br>
+          We focus on clean, modern, and strategic design that improves recognition and trust.
+        </p>
+      </div>
+    </div>
+  </section>  <section id="services">
+    <div class="section-title">Design Packages</div>
+    <div class="service"><h3>Starter Logo Package</h3></div>
+    <div class="service"><h3>Business Branding Package</h3></div>
+    <div class="service"><h3>Social Media Branding</h3></div>
+    <div class="service"><h3>Full Brand Identity</h3></div>
+  </section>  <section id="reviews">
+    <div class="section-title">Client Reviews</div>
+    <div class="reviews">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"Rasl Studio completely transformed our brand identity. Professional, fast and creative."</p>
+        <h4>— Business Owner</h4>
+      </div><div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>"The logo exceeded expectations and helped us look more credible online."</p>
+    <h4>— Startup Founder</h4>
+  </div>
+
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>"Excellent communication and world-class design quality."</p>
+    <h4>— Marketing Manager</h4>
+  </div>
+</div>
+
+  </section>  <section>
+    <div class="section-title">Free Brand Audit</div>
+    <p class="intro-copy" style="margin-bottom: 24px;">
+      Send your logo or brand and I will review it and give improvement feedback for free.
+    </p>
+    <a class="btn" href="https://wa.me/26656017414?text=I%20want%20a%20free%20brand%20audit" target="_blank" rel="noopener">Request Free Audit</a>
+  </section>  <section id="contact" class="contact">
+    <h2>Need a Graphic Designer in Lesotho?</h2>
+    <p>
+      Let’s build your brand professionally. Contact Rasl Studio for logo design and branding services.
+    </p>
+    <div class="hero-actions" style="justify-content:center; margin-top: 28px;">
+      <a class="btn" href="https://wa.me/26656017414?text=Hi%20I%20want%20a%20logo%20or%20branding%20design" target="_blank" rel="noopener">Start a Project</a>
+      <a class="btn secondary"
+href="project-request.html">
+Project Brief Form
+</a>
+    </div>
+  </section>  <footer class="footer">
+    <div>Rasl Studio</div>
+    <div>© 2026 Graphic Designer in Maseru, Lesotho</div>
+  </footer>  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" type="button" id="lightboxClose" aria-label="Close preview">×</button>
+      <img id="lightboxImg" src="" alt="Portfolio preview">
+    </div>
+  </div>  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+    function openLightbox(src, alt) {
+      lightboxImg.src = src;
+      lightboxImg.alt = alt || 'Portfolio preview';
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      lightboxImg.src = '';
+    }
+
+    portfolioItems.forEach((item) => {
+      item.addEventListener('click', () => {
+        const full = item.getAttribute('data-full');
+        const img = item.querySelector('img');
+        openLightbox(full, img ? img.alt : 'Portfolio preview');
+      });
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script></body>
+</html>
